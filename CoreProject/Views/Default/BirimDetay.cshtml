@@ -1,0 +1,29 @@
+﻿@using CoreProject.Models;
+@model List<Personel>
+@{
+    ViewData["Title"] = "BirimDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+
+<h2>@ViewBag.brm Departmanı</h2>
+<br />
+<table class="w3-table w3-large">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>ŞEHİR</th>
+    </tr>
+     @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.PersonelID</td>
+        <td>@item.Ad</td>
+        <td>@item.Soyad</td>
+        <td>@item.Sehir</td>
+    </tr>
+    }
+</table>
+
+

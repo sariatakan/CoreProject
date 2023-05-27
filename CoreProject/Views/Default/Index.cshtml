@@ -1,0 +1,27 @@
+﻿@using CoreProject.Models;
+@model List<Birim>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<table class="w3-table w3-large">
+    <tr>
+        <th>ID</th>
+        <th>BİRİM</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.BirimID</td>
+        <td>@item.BirimAd</td>
+        <td><a href="/Default/BirimSil/@item.BirimID" class="btn btn-outline-danger">SİL</a></td>
+        <td><a href="/Default/BirimGetir/@item.BirimID"class="btn btn-outline-danger">GÜNCELLE</a></td>
+    </tr>
+    }
+</table>
+<a href="/Default/YeniBirim/" class="btn btn-primary">Yeni Birim</a>  
+
